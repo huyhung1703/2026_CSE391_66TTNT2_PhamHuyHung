@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 14px; background-color: #f4f4f4; padding: 20px; }
+        .form-container { background: white; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; }
+        
+        .section-title { font-weight: bold; border-bottom: 1px solid #000; margin-top: 20px; margin-bottom: 10px; padding-bottom: 3px; }
+        
+        .row { display: flex; margin-bottom: 8px; align-items: flex-start; }
+        .col-label { width: 160px; font-weight: bold; }
+        .col-input { flex: 1; }
+        
+        input[type="text"], input[type="email"], select, textarea { width: 100%; box-sizing: border-box; padding: 4px; border: 1px solid #999; }
+        
+        .gender-options, .shift-options { display: flex; flex-direction: column; gap: 2px; }
+        
+        .toolbar { background: #f0f0f0; border: 1px solid #ccc; border-bottom: none; padding: 5px; font-size: 12px; display: flex; gap: 10px; }
+        .editor-container { border: 1px solid #ccc; }
+
+        .footer { margin-top: 20px; border-top: 1px solid #000; padding-top: 10px; display: flex; justify-content: space-between; }
+        .btn-group-right { display: flex; gap: 5px; }
+        button { cursor: pointer; padding: 3px 10px; }
+        .btn-submit { background-color: #333; color: white; border: none; }
+        .btn-nav { background: #eee; border: 1px solid #999; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form>
+        <div class="section-title">Basic Info</div>
+        <div class="row">
+            <div class="col-label">Employee ID</div>
+            <div class="col-input">9</div>
+        </div>
+        <div class="row">
+            <div class="col-label">Last Name</div>
+            <div class="col-input">Dodsworth</div>
+        </div>
+        <div class="row">
+            <div class="col-label">First Name</div>
+            <div class="col-input"><input type="text" value="Anne"></div>
+        </div>
+        <div class="row">
+            <div class="col-label">Gender</div>
+            <div class="col-input gender-options">
+                <label><input type="radio" name="gender"> Male</label>
+                <label><input type="radio" name="gender"> Female</label>
+                <label><input type="radio" name="gender"> XXX</label>
+                <label><input type="radio" name="gender" checked> ZZZ</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-label">Title</div>
+            <div class="col-input"><input type="text" value="Sales Representative"></div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-label">Suffix</div>
+            <div class="col-input"><input type="text" value="Sales Representative"></div>
+        </div>
+        <div class="row">
+            <div class="col-label">BirthDate</div>
+            <div class="col-input">
+                <input type="date" name="birth" id="birth" required> <span>(?)</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-label">HireDate</div>
+            <div class="col-input">
+                <input type="date" name="hire" id="hire" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-label">Reports To</div>
+            <div class="col-input">
+                <select>
+                    <option>Buchanan</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="section-title">Contact Info</div>
+        <div class="row">
+            <div class="col-label">Email</div>
+            <div class="col-input"><input type="email" value="name@example.com"></div>
+        </div>
+        <div class="row">
+            <div class="col-label">Country</div>
+            <div class="col-input">
+                <select>
+                    <option>Russian Federation</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-label">Photo</div>
+            <div class="col-input"><input type="text" value="EmpID9.bmp"></div>
+        </div>
+
+        <div class="section-title">Optional Info</div>
+        <div class="row">
+            <div class="col-label">Notes</div>
+            <div class="col-input">
+                <div class="toolbar"><b>B</b> <i>I</i> <u>S</u> <span>H1 H2 H3</span></div>
+                <textarea rows="5">Anne has a BA degree in English from St. Lawrence College. She is fluent in French and German.ZZZ</textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-label">Preferred Shift</div>
+            <div class="col-input shift-options">
+                <label><input type="checkbox"> Regular</label>
+                <label><input type="checkbox" checked> Gravy Yard</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-label">Active?</div>
+            <div class="col-input shift-options">
+                <label><input type="checkbox" checked> Yes</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-label">Are you human?</div>
+            <div class="col-input">
+                <div style="font-family: monospace; font-size: 20px; letter-spacing: 5px;">TIDAWO</div>
+                <small style="color: blue; cursor: pointer;">Click to change</small>
+                <input type="text" style="margin-top: 5px;">
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="btn-group-left">
+                <button type="button" class="btn-nav">&lt;</button>
+                <button type="button" class="btn-nav">&gt;</button>
+            </div>
+            <div class="btn-group-right">
+                <button type="submit" class="btn-submit">Submit</button>
+                <button type="button">Cancel</button>
+            </div>
+        </div>
+        <div style="font-size: 11px; margin-top: 5px;">* required </div>
+    </form>
+</div>
+
+</body>
+</html>

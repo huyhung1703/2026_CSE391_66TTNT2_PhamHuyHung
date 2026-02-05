@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>HR Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <div style="color: white; padding: 0 20px; font-weight: bold;">HR Management</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <div style="margin-left: auto; padding-right: 20px;">
+        <input type="text" placeholder="Search...">
+        <button style="background-color: black; color: white;">Search</button>
+    </div>
+</nav>
+
+<div style="padding: 20px;">
+    <div class="container">
+        <h2>Employee</h2>
+        <button style="background-color: #007bff; color: white; padding: 8px 15px; border: none; border-radius: 4px;">+ Add</button>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Position</th><th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td><td>Fatima Beatriz</td><td>Fatima Beatriz@gmail.com</td><td>0985674321</td><td>Staff</td>
+                <td class="action">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td><td>Gabriel Hanna</td><td>Gabriel Hanna@gmail.com</td><td>0353674231</td><td>Staff</td>
+                <td class="action">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td><td>Charles Diya</td><td>Charles Diya@gmail.com</td><td>0347658833</td><td>Staff</td>
+                <td class="action">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td><td>Frank Lamdo</td><td>Frank Lamdo@gmail.com</td><td>0975444768</td><td>Manager</td>
+                <td class="action">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td><td>Louis Tom</td><td>Louis Tom@gmail.com</td><td>0789568223</td><td>Staff</td>
+                <td class="action">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="form-add" style="margin: 20px;">
+    <div class="form-header">
+        New Employee <span>&times;</span>
+    </div>
+    <div class="form-body">
+        <div class="row">
+            <div class="col"><label>Name</label><br><input type="text"></div>
+            <div class="col"><label>Email</label><br><input type="text"></div>
+        </div>
+        <div class="row">
+            <div class="col"><label>Phone</label><br><input type="text"></div>
+            <div class="col">
+                <label>Position</label><br>
+                <select style="width: 100%;"><option>Staff</option><option>Manager</option></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label>Sex</label><br>
+                <input type="radio" name="s"> Male <input type="radio" name="s"> Female
+            </div>
+        </div>
+    </div>
+    <div class="form-footer" style="padding: 10px; background-color: #f1f1f1;">
+        <button style="background-color: green; color: white;">Save</button>
+        <button>Cancel</button>
+    </div>
+</div>
+</body>
+</html>

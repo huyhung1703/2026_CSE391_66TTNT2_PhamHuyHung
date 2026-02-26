@@ -1,0 +1,61 @@
+body{
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.container{
+    border: 1px solid black;
+    padding: 20px;
+    width: 600px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+h3{
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: black;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form-row{
+    display: flex;
+    gap: 15px;
+}
+.form-row input{
+    flex: 1;
+}
+input[type="text"], input[type="email"]{
+    textarea{
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        outline: none;
+        font-size: 14px;
+    }
+    textarea{
+        resize: none;
+    }
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+button{
+    background-color: rgb(9, 158, 221);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+span{
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+}

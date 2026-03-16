@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Score Board</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 30px; line-height: 1.6; }
+        .container { max-width: 900px; margin: auto; border: 1px solid #ddd; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        
+        .form-group { display: flex; gap: 10px; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #eee; }
+        input, select, button { padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background-color: #28a745; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #218838; }
+        button.btn-delete { background-color: #dc3545; }
+        button.btn-delete:hover { background-color: #c82333; }
+
+        .filter-group { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; background: #f8f9fa; padding: 10px; border-radius: 4px; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        th { background-color: #007bff; color: white; }
+        th.sortable { cursor: pointer; user-select: none; }
+        th.sortable:hover { background-color: #0056b3; }
+        
+        .bg-warning { background-color: #fff9c4 !important; }
+        
+        .stats { margin-top: 20px; font-weight: bold; font-size: 1.1em; color: #333; }
+        #noResult { color: #dc3545; font-style: italic; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Score Board</h2>
+
+    <div class="form-group">
+        <input type="text" id="txtName" placeholder="Họ tên sinh viên..." style="flex: 2;">
+        <input type="number" id="txtScore" placeholder="Điểm (0-10)" step="0.1" style="flex: 1;">
+        <button id="btnAdd">Thêm Sinh Viên</button>
+    </div>
+
+    <div class="filter-group">
+        <div>
+            <strong>Tìm kiếm:</strong>
+            <input type="text" id="searchName" placeholder="Nhập tên cần tìm...">
+        </div>
+        <div>
+            <strong>Lọc:</strong>
+            <select id="filterRank">
+                <option value="all">Tất cả xếp loại</option>
+                <option value="Giỏi">Giỏi (≥ 8.5)</option>
+                <option value="Khá">Khá (≥ 7.0)</option>
+                <option value="Trung bình">Trung bình (≥ 5.0)</option>
+                <option value="Yếu">Yếu ( < 5.0)</option>
+            </select>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Họ tên</th>
+                <th id="sortScore" class="sortable">Điểm <span id="sortIcon">↕</span></th>
+                <th>Xếp loại</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+            </tbody>
+    </table>
+
+    <p id="noResult" style="display: none;">Không tìm thấy sinh viên nào phù hợp.</p>
+
+    <div class="stats" id="statsArea">
+        Tổng số SV: 0 | Điểm trung bình: 0.0
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký nhiều bước</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; display: flex; justify-content: center; padding: 40px; }
+        .multi-step-form { background: white; padding: 30px; border-radius: 10px; width: 450px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        .progress-container { display: flex; justify-content: space-between; margin-bottom: 30px; position: relative; }
+        .progress-bar { position: absolute; top: 50%; left: 0; height: 4px; background: #ddd; width: 100%; z-index: 1; transform: translateY(-50%); }
+        .progress-active { position: absolute; top: 50%; left: 0; height: 4px; background: #007bff; width: 0%; z-index: 2; transform: translateY(-50%); transition: 0.3s; }
+        .step-circle { width: 30px; height: 30px; background: white; border: 3px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3; font-weight: bold; transition: 0.3s; }
+        .step-circle.active { border-color: #007bff; color: #007bff; }
+
+        .form-step { display: none; }
+        .form-step.active { display: block; }
+        
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        .error { color: red; font-size: 12px; margin-top: 5px; }
+        
+        .btn-group { display: flex; gap: 10px; margin-top: 20px; }
+        button { flex: 1; padding: 12px; border: none; border-radius: 5px; cursor: pointer; }
+        .btn-next { background: #007bff; color: white; }
+        .btn-prev { background: #6c757d; color: white; }
+        
+        #summary { background: #f9f9f9; padding: 15px; border-radius: 5px; line-height: 1.8; }
+    </style>
+</head>
+<body>
+
+<div class="multi-step-form">
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+        <div class="progress-active" id="progressActive"></div>
+        <div class="step-circle active">1</div>
+        <div class="step-circle">2</div>
+        <div class="step-circle">3</div>
+    </div>
+
+    <form id="mainForm">
+        <div class="form-step active" id="step1">
+            <h3>Bước 1: Thông tin cá nhân</h3>
+            <div class="form-group">
+                <label>Họ tên</label>
+                <input type="text" id="fullname" placeholder="Nhập họ tên">
+                <span class="error" id="err-fullname"></span>
+            </div>
+            <div class="form-group">
+                <label>Ngày sinh</label>
+                <input type="date" id="dob">
+                <span class="error" id="err-dob"></span>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn-next" onclick="nextStep(1)">Tiếp theo</button>
+            </div>
+        </div>
+
+        <div class="form-step" id="step2">
+            <h3>Bước 2: Thông tin tài khoản</h3>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="example@gmail.com">
+                <span class="error" id="err-email"></span>
+            </div>
+            <div class="form-group">
+                <label>Mật khẩu</label>
+                <input type="password" id="password">
+                <span class="error" id="err-password"></span>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn-prev" onclick="prevStep(1)">Quay lại</button>
+                <button type="button" class="btn-next" onclick="nextStep(2)">Tiếp theo</button>
+            </div>
+        </div>
+
+        <div class="form-step" id="step3">
+            <h3>Bước 3: Xác nhận thông tin</h3>
+            <div id="summary"></div>
+            <div class="btn-group">
+                <button type="button" class="btn-prev" onclick="prevStep(2)">Quay lại</button>
+                <button type="submit" class="btn-next">Hoàn tất</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
